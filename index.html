@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI計算機</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+    <div class="wrapper">
+    <header>
+        <h1><img src="img/BMICLogo.png"></h1>
+        <form>
+            身高 cm
+            <br>
+            <input class="input_height" type="text" value="請輸入身高">
+            <br>
+            體重 kg
+            <br>
+            <input class="input_weight" type="text" value="請輸入體重">
+            <input class="submit " type="submit" value="看結果">
+            <div class="keika keikanw none"><!-- keikanw -->
+                <div class="maru">
+                    <div class="keika_bmi">20.90 </div>
+                    <div class="keikaBmi" style="font-size: 14px;">BMI</div>
+                    <div class="loop"></div>
+                </div>
+                <div class="monzi">理想</div> 
+            </div>
+        </form>
+    </header>    
+        <main>
+            <h2>BMI 紀錄</h2>
+            <div class="content"> 
+                <!-- <ul class="kiroku nw">
+                    <li class="list status">理想</li>
+                    <li class="list bmi">20.9</li>
+                    <li class="list weight">70kg</li>
+                    <li class="list height">180cm</li>
+                    <li class="list date">06-19-2017</li>
+                </ul> -->
+                <!-- 過輕 underweight
+                理想 normal weight
+                過重 overweight
+                輕度肥胖 slight obesity
+                中度肥胖 middle obesity
+                重度肥胖 extreme obesity -->
+            </div>
+            <div class="clear">
+                <button  type="button">清除歷史紀錄</button>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <div class="logo">
+            <img src="img/BMICLogo.png">
+        </div>
+    </footer>
+    
+<script src="js/all.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/active.js"></script> 
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+$maincolor : #FFD366;
+$basecolor:#424242;
+$uw: #31BAF9;
+$nw: #86D73F;
+$ow: #FF982D;
+$so: #FF6C02;
+$mo: #FF6C02;
+$eo: #FF1200 ;
+
+$bigfont: 24px;
+$norfont: 20px;
+$smallfont: 12px;
+
+@mixin before($font){
+    content: $font;
+    font-size: $smallfont;
+    padding-right: 7px;    
+}
+@mixin weight($color){
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 0;
+    width: 7px;
+    height: 65px;
+    background: $color;
+    box-shadow: 2px 0 3px 0 rgba($color,0.29);    
+}
+@mixin keika($color) {
+    .maru{
+        position: relative; 
+        width: 125px;
+        font-size: 32px;
+        border-radius: 65px;
+        color: $color;
+        border: 6px solid $color;
+        text-align: center;
+        padding-top: 41px;
+        padding-bottom: 32px;
+        .loop{
+            cursor: pointer;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            padding: 5px 8px;
+            background-color: $color;
+            width: 14px;
+            height: 19px;
+            background-image: url(../img/icons_loop.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 20px;
+            border: 3px solid $basecolor;
+             &:hover{
+                background-color: darken($color,20%);
+            }
+        }
+    }
+    .monzi{
+        position: absolute;
+        top: 48px;
+        left: 159px;
+        width: 64px;
+        font-size: 32px;
+        color: $color;
+    }
+}
+
+@mixin ipad{
+    @media screen and(max-width: 768px){
+        @content;    
+    }
+}

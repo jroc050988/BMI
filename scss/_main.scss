@@ -1,0 +1,203 @@
+body{
+    color: $basecolor;
+    background-color: rgb(248, 253, 240);
+    height: 100%;    
+}
+
+header{
+    padding: 74px;
+    background-color: $basecolor;
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    box-sizing: border-box;
+    @include ipad(){
+        padding: 50px;
+        display:block;    
+    }
+}
+.wrapper{
+    min-height: 100vh;
+    margin-bottom: -148px;
+}
+h1{
+    margin-right: 97px;
+    @include ipad(){
+        width: 55px;
+        height: 55px;
+        background-image: url(../img/BMICLogo.png);
+        background-size: cover;
+        margin: 0 auto;
+        img{
+            display: none;
+        }
+    }
+}
+form{
+    position: relative;
+    width:423px;
+    color: $maincolor;
+    @include ipad(){
+        margin: 0 auto;
+    }
+    input{
+    background-color: rgba(255,255,255,0.18);
+        width: 250px;
+        height: 40px;
+        border: 2px solid $maincolor;
+        border-radius: 10px;
+        color:  rgba(255,255,255,0.50);
+        font-size: $bigfont;
+        padding: 8px 16px;
+        margin-top: 7px;
+        margin-bottom: 23px;
+        box-sizing: border-box;
+    }
+    .submit{
+        cursor: pointer;
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        background-color: $maincolor;
+        font-size: $bigfont;
+        color: $basecolor;
+        border: none;
+        left: 303px;
+        top: 18px;
+        &:hover{
+            box-shadow: 0 1px 6px 3px rgba($maincolor,0.64);
+        }
+        &:active{
+            background-color: #DEA921;
+            box-shadow: none;
+        }    
+    }
+    .keika{
+        position: absolute;
+        left: 303px;
+        top: 18px;           
+    }   
+}
+
+
+h2{
+    text-align: center;
+    font-size: $bigfont;
+    margin: 48px auto 36px;
+
+}
+main{
+    min-width: 768px;
+    padding-bottom:134px;
+}
+.content{
+    margin-bottom: 16px;
+    .kiroku{
+        margin: 0 auto 16px;
+        position: relative;
+        display: flex;
+        width: fit-content;
+        list-style: none;
+        padding: 21px 12px;
+        background-color: #fff;
+        li{
+            font-size: $norfont;
+            padding-right: 42px;
+            &:first-child{
+                width: 80px;
+                padding-right: 30px;   
+            }
+        }
+        .bmi::before{
+            @include before("BMI");
+        }
+        .weight::before{
+            @include before("weight");
+        }
+        .height::before{
+            @include before("height");
+        }
+        .date{
+            padding-top: 7.5px;
+            padding-right: 0;
+            height: fit-content;
+            font-size: $smallfont;
+        }
+    }
+
+}
+.clear{
+    text-align: center;
+    margin: 0 auto;
+    button{
+        cursor: pointer;
+        width: 200px;
+        height: 40px;
+        background: $basecolor;
+        border-radius: 10px;
+        color: #fff;
+        border: none ;
+        &:hover{
+            box-shadow: 0 1px 6px 3px rgba($basecolor,0.64);
+        }
+    }
+}
+footer{
+    min-width: 768px;
+    margin-top: 58px;
+    background-color: $maincolor;
+    .logo{
+        width: 55px;
+        height: 55px;
+        padding: 18px 0 17px;
+        height: 55px;
+        margin: 0 auto;
+    }
+    img{
+        filter: brightness(25%);
+        width: 55px;
+        height: 55px;    
+    }
+}
+
+.uw::before{
+    @include weight($uw);
+}
+.nw::before{
+    @include weight($nw);
+}
+.ow::before{
+    @include weight($ow);
+}
+.so::before{
+    @include weight($so);
+}
+.mo::before{
+    @include weight($mo);
+}
+.eo::before{
+    @include weight($eo);
+}
+.none{
+    display: none;
+}
+
+.keikanw{
+    @include keika($nw);
+}
+.keikauw{
+    @include keika($uw);
+}
+.keikaow{
+    @include keika($ow);
+}
+.keikaso{
+    @include keika($so);
+}
+.keikamo{
+    @include keika($mo);
+}
+.keikaeo{
+    @include keika($eo);
+}
