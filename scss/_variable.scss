@@ -24,7 +24,12 @@ $smallfont: 12px;
     width: 7px;
     height: 65px;
     background: $color;
-    box-shadow: 2px 0 3px 0 rgba($color,0.29);    
+    box-shadow: 2px 0 3px 0 rgba($color,0.29);
+    @include phone{
+        width: 224px;
+        height: 7px;
+        left: 0;
+    }   
 }
 @mixin keika($color) {
     .maru{
@@ -68,6 +73,11 @@ $smallfont: 12px;
 
 @mixin ipad{
     @media screen and(max-width: 768px){
+        @content;    
+    }
+}
+@mixin phone{
+    @media screen and(max-width: 570px){
         @content;    
     }
 }

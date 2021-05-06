@@ -9,11 +9,15 @@ header{
     background-color: $basecolor;
     display: flex;
     justify-content: center;
-    height: 300px;
+    height: 350px;
     box-sizing: border-box;
     @include ipad(){
         padding: 50px;
         display:block;    
+    }
+    @include phone{
+        padding: 50px 0 ;
+        height: 450px;
     }
 }
 .wrapper{
@@ -40,6 +44,10 @@ form{
     @include ipad(){
         margin: 0 auto;
     }
+    @include phone{
+        width: 250px;
+        height: 310px;
+    }
     input{
     background-color: rgba(255,255,255,0.18);
         width: 250px;
@@ -65,6 +73,12 @@ form{
         border: none;
         left: 303px;
         top: 18px;
+        @include phone{
+            left: 50%;
+            top: auto;
+            bottom: 0;
+            margin: 0 0 0 -60px; 
+        }
         &:hover{
             box-shadow: 0 1px 6px 3px rgba($maincolor,0.64);
         }
@@ -88,11 +102,14 @@ h2{
 
 }
 main{
-    min-width: 768px;
     padding-bottom:134px;
 }
 .content{
     margin-bottom: 16px;
+    @include phone{
+        width: 300px;
+        margin: 0 auto;
+    }
     .kiroku{
         margin: 0 auto 16px;
         position: relative;
@@ -101,12 +118,27 @@ main{
         list-style: none;
         padding: 21px 12px;
         background-color: #fff;
+        @include phone{
+            text-align: center;
+            width: 200px;
+            display: inline-block;
+            left: 38px;
+        }
         li{
             font-size: $norfont;
             padding-right: 42px;
             &:first-child{
                 width: 80px;
-                padding-right: 30px;   
+                padding-right: 30px;
+                @include phone{
+                    margin: auto;
+                    padding-right: 0;
+                    padding-bottom: 15px;
+                }   
+            }
+            @include phone{
+                margin: 0;
+                padding: 0;
             }
         }
         .bmi::before{
@@ -144,7 +176,6 @@ main{
     }
 }
 footer{
-    min-width: 768px;
     margin-top: 58px;
     background-color: $maincolor;
     .logo{
